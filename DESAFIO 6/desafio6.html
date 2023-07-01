@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>DESAFIO 6</title>
+</head>
+</html>
+<body>
+  <h1>Lista de Compras</h1>
+
+  <form id="formulario">
+    <label for="produto">Produto:</label>
+    <input type="text" id="produto" required>
+    <br> <br>
+
+    <label for="categoria">Categoria:</label>
+    <select id="categoria" required>
+      <option value="">Selecione uma categoria</option>
+      <option value="frutas">Frutas</option>
+      <option value="laticinios">Laticínios</option>
+      <option value="congelados">Congelados</option>
+      <option value="doces">Doces</option>
+    </select>
+    <br> <br>
+
+    <button type="submit">Adicionar</button>
+  </form>
+
+  <h2>Itens da Lista</h2>
+  <ul id="lista"></ul>
+
+  <script>
+    document.getElementById('formulario').addEventListener('submit', function(event) {
+      event.preventDefault();
+
+      var produto = document.getElementById('produto').value;
+      var categoria = document.getElementById('categoria').value;
+
+      var item = document.createElement('li');
+      item.textContent = produto;
+
+      var botaoRemover = document.createElement('button');
+      botaoRemover.textContent = 'Remover';
+      botaoRemover.addEventListener('click', function() {
+        item.remove();
+      });
+
+      item.appendChild(botaoRemover);
+
+      var lista = document.getElementById(categoria);
+      lista.appendChild(item);
+    });
+  </script>
+
+  <h2>Frutas</h2>
+  <ul id="frutas"></ul>
+
+  <h2>Laticínios</h2>
+  <ul id="laticinios"></ul>
+
+  <h2>Congelados</h2>
+  <ul id="congelados"></ul>
+
+  <h2>Doces</h2>
+  <ul id="doces"></ul>
+</body>
+</html>

@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DESAFIO 3</title>
+</head>
+<body>
+    <h1>TECNOLOGIAS:</h1>
+    <script>
+        var area = window.prompt ("Para qual área você gostaria de seguir? \n 1. Front-end \n 2. Back-end")
+
+        if (area == 1) {
+            window.prompt ("Qual você gostaria de aprender? \n 1. React \n 2. Vue")
+        } else {
+            window.prompt ("Qual você gostaria de aprender? \n 1. C# \n 2. Java")
+        }
+
+        var escolha = window.prompt ("Qual das duas opções você escolheria? \n 1. Seguir se especializando na área escolhida \n 2. Se desenvolver para FullStack")
+
+        if (escolha == 1) {
+
+    var tecnologias = [];
+  
+    do {
+    var tecnologia = window.prompt('Qual tecnologia você gostaria de se especializar?');
+    tecnologias.push(tecnologia);
+    var resposta = window.prompt('Deseja continuar? \n 1. Sim \n 2. Não');
+  } while (resposta.toLowerCase() === '1');
+
+    var lista = document.createElement('ul');
+    for (var i = 0; i < tecnologias.length; i++) {
+    var item = document.createElement('li');
+    item.textContent = tecnologias[i];
+    lista.appendChild(item);
+  }
+
+    document.body.appendChild(lista);
+}
+
+    
+
+    </script>
+</body>
+</html>
